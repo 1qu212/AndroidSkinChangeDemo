@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import cn.msz.skinchangedemo.base.BaseActivity;
+import cn.msz.skinchangedemo.skinattr.TextSizeAttr;
+import cn.msz.skinchangedemo.util.DynamicSkinAttrItem;
 import cn.msz.skinchangedemo.util.LoadSkinCallback;
 import cn.msz.skinchangedemo.util.SkinManager;
 
@@ -34,7 +36,8 @@ public class MainActivity extends BaseActivity {
             @Override
             public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
                 Holder holder = (Holder) viewHolder;
-                holder.tvItem.setTextSize(TypedValue.COMPLEX_UNIT_PX, getResources().getDimension(R.dimen.textSize14));
+                DynamicSkinAttrItem dynamicSkinAttrItem = new DynamicSkinAttrItem(MainActivity.this, holder.tvItem, new TextSizeAttr(), R.dimen.textSize14);
+                skinInflaterFactory.addItem(dynamicSkinAttrItem);
             }
 
             @Override
@@ -45,7 +48,7 @@ public class MainActivity extends BaseActivity {
             class Holder extends RecyclerView.ViewHolder {
                 TextView tvItem;
 
-                public Holder(@NonNull View itemView) {
+                Holder(@NonNull View itemView) {
                     super(itemView);
                     tvItem = itemView.findViewById(R.id.tv_item);
                 }

@@ -9,7 +9,7 @@ import cn.msz.skinchangedemo.util.SkinInflaterFactory;
 import cn.msz.skinchangedemo.util.SkinManager;
 
 public class BaseActivity extends AppCompatActivity implements SkinChangeListener {
-    private SkinInflaterFactory skinInflaterFactory;
+    public SkinInflaterFactory skinInflaterFactory;
 
     @Override
     public void onSkinChanged() {

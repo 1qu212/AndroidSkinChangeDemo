@@ -57,7 +57,7 @@ public class SkinInflaterFactory implements LayoutInflater.Factory2 {
                 skinAttrList.add(skinAttr);
             }
         }
-        if (skinAttrList != null && !skinAttrList.isEmpty()) {
+        if (!skinAttrList.isEmpty()) {
             SkinAttrViewItem item = new SkinAttrViewItem(view, skinAttrList);
             //系统默认的资源则不需要重新设置属性
             if (!SkinManager.getInstance().isDefaultSkin()) {
@@ -69,16 +69,24 @@ public class SkinInflaterFactory implements LayoutInflater.Factory2 {
         }
     }
 
+    public void addItem(DynamicSkinAttrItem item) {
+        List<SkinAttr> skinAttrList = new ArrayList<>();
+        skinAttrList.add(item.skinAttr);
+        SkinAttrViewItem skinAttrViewItem = new SkinAttrViewItem(item.view, skinAttrList);
+        skinAttrViewItem.setViewAttrs();
+        mSkinAttrViewItemList.add(skinAttrViewItem);
+    }
+
     private class SkinAttrViewItem {
         private View view;
         private List<SkinAttr> attrList;
 
-        public SkinAttrViewItem(View view, List<SkinAttr> attrList) {
+        SkinAttrViewItem(View view, List<SkinAttr> attrList) {
             this.view = view;
             this.attrList = attrList;
         }
 
-        public void setViewAttrs() {
+        void setViewAttrs() {
             if (attrList == null || attrList.isEmpty()) {
                 return;
             }

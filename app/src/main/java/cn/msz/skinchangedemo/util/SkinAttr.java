@@ -3,10 +3,10 @@ package cn.msz.skinchangedemo.util;
 import android.view.View;
 
 public abstract class SkinAttr implements Cloneable {
-    protected static final String RES_TYPE_NAME_COLOR = "color";
-    protected static final String RES_TYPE_NAME_DRAWABLE = "drawable";
-    protected static final String RES_TYPE_NAME_MIPMAP = "mipmap";
-    protected static final String RES_TYPE_NAME_DIMEN = "dimen";
+    private static final String RES_TYPE_NAME_COLOR = "color";
+    private static final String RES_TYPE_NAME_DRAWABLE = "drawable";
+    private static final String RES_TYPE_NAME_MIPMAP = "mipmap";
+    private static final String RES_TYPE_NAME_DIMEN = "dimen";
     //属性值引用id
     public int attrValueId;
     //属性类型
