@@ -1,4 +1,4 @@
-package cn.msz.skinchangedemo.util;
+package cn.msz.skinchange.util;
 
 import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
@@ -7,10 +7,10 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import cn.msz.skinchangedemo.config.SkinConfig;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.msz.skinchange.config.SkinConfig;
 
 public class SkinInflaterFactory implements LayoutInflater.Factory2 {
     private AppCompatActivity mAppCompatActivity;

@@ -1,15 +1,16 @@
-package cn.msz.skinchangedemo.util;
+package cn.msz.skinchange.util;
 
 import android.content.Context;
 import android.os.Environment;
-
-import cn.msz.skinchangedemo.config.SkinConfig;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+
+import cn.msz.skinchange.config.SkinConfig;
+
 
 public class SkinFileUtils {
 

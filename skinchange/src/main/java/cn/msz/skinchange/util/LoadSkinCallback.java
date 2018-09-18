@@ -1,4 +1,4 @@
-package cn.msz.skinchangedemo.util;
+package cn.msz.skinchange.util;
 
 public interface LoadSkinCallback {
     void onSuccess();

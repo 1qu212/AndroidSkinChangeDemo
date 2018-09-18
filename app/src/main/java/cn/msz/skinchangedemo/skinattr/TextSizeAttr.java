@@ -4,8 +4,8 @@ import android.util.TypedValue;
 import android.view.View;
 import android.widget.TextView;
 
-import cn.msz.skinchangedemo.util.ResourceManager;
-import cn.msz.skinchangedemo.util.SkinAttr;
+import cn.msz.skinchange.util.ResourceManager;
+import cn.msz.skinchange.util.SkinAttr;
 
 public class TextSizeAttr extends SkinAttr {
     @Override

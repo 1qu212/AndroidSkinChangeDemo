@@ -3,8 +3,8 @@ package cn.msz.skinchangedemo.skinattr;
 import android.view.View;
 import android.widget.TextView;
 
-import cn.msz.skinchangedemo.util.ResourceManager;
-import cn.msz.skinchangedemo.util.SkinAttr;
+import cn.msz.skinchange.util.ResourceManager;
+import cn.msz.skinchange.util.SkinAttr;
 
 public class TextColorAttr extends SkinAttr {
     @Override

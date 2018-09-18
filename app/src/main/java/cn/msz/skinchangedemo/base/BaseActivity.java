@@ -4,9 +4,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import cn.msz.skinchangedemo.util.SkinChangeListener;
-import cn.msz.skinchangedemo.util.SkinInflaterFactory;
-import cn.msz.skinchangedemo.util.SkinManager;
+import cn.msz.skinchange.util.SkinChangeListener;
+import cn.msz.skinchange.util.SkinInflaterFactory;
+import cn.msz.skinchange.util.SkinManager;
 
 public class BaseActivity extends AppCompatActivity implements SkinChangeListener {
     public SkinInflaterFactory mSkinInflaterFactory;

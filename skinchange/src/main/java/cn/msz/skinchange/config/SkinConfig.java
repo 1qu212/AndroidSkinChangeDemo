@@ -1,4 +1,4 @@
-package cn.msz.skinchangedemo.config;
+package cn.msz.skinchange.config;
 
 public class SkinConfig {
     public static final String NAMESPACE = "http://schemas.android.com/android/skin";

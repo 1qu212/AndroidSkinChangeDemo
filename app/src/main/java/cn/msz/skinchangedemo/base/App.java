@@ -2,11 +2,11 @@ package cn.msz.skinchangedemo.base;
 
 import android.app.Application;
 
+import cn.msz.skinchange.util.AttrFactory;
+import cn.msz.skinchange.util.SkinManager;
 import cn.msz.skinchangedemo.skinattr.BackgroundAttr;
 import cn.msz.skinchangedemo.skinattr.TextColorAttr;
 import cn.msz.skinchangedemo.skinattr.TextSizeAttr;
-import cn.msz.skinchangedemo.util.AttrFactory;
-import cn.msz.skinchangedemo.util.SkinManager;
 
 public class App extends Application {
     @Override

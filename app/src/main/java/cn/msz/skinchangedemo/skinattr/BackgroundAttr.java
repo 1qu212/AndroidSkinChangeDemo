@@ -2,8 +2,8 @@ package cn.msz.skinchangedemo.skinattr;
 
 import android.view.View;
 
-import cn.msz.skinchangedemo.util.ResourceManager;
-import cn.msz.skinchangedemo.util.SkinAttr;
+import cn.msz.skinchange.util.ResourceManager;
+import cn.msz.skinchange.util.SkinAttr;
 
 public class BackgroundAttr extends SkinAttr {
     @Override

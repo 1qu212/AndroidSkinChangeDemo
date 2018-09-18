@@ -1,21 +1,19 @@
-package cn.msz.skinchangedemo.util;
+package cn.msz.skinchange.util;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
-import android.support.v4.content.ContextCompat;
-
-import cn.msz.skinchangedemo.config.SkinConfig;
 
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.msz.skinchange.config.SkinConfig;
 
 public class SkinManager {
     private Context context;

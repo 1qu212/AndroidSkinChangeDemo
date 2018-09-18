@@ -1,4 +1,4 @@
-package cn.msz.skinchangedemo.util;
+package cn.msz.skinchange.util;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
