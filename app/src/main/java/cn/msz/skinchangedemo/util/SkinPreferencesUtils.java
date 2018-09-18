@@ -6,7 +6,7 @@ import android.content.SharedPreferences;
 
 public class SkinPreferencesUtils {
 
-    public static String PREFERENCE_NAME = "cn_msz_skin_pref";
+    private static String PREFERENCE_NAME = "cn_msz_skin_pref";
 
     private SkinPreferencesUtils() {
         throw new AssertionError();
@@ -27,12 +27,12 @@ public class SkinPreferencesUtils {
 
     /**
      * get string preferences
-     * 
+     *
      * @param context
-     * @param key The name of the preference to retrieve
+     * @param key          The name of the preference to retrieve
      * @param defaultValue Value to return if this preference does not exist
      * @return The preference value if it exists, or defValue. Throws ClassCastException if there is a preference with
-     *         this name that is not a string
+     * this name that is not a string
      */
     public static String getString(Context context, String key, String defaultValue) {
         SharedPreferences settings = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
@@ -41,10 +41,10 @@ public class SkinPreferencesUtils {
 
     /**
      * put int preferences
-     * 
+     *
      * @param context
-     * @param key The name of the preference to modify
-     * @param value The new value for the preference
+     * @param key     The name of the preference to modify
+     * @param value   The new value for the preference
      * @return True if the new values were successfully written to persistent storage.
      */
     public static boolean putInt(Context context, String key, int value) {
@@ -56,11 +56,11 @@ public class SkinPreferencesUtils {
 
     /**
      * get int preferences
-     * 
+     *
      * @param context
-     * @param key The name of the preference to retrieve
+     * @param key     The name of the preference to retrieve
      * @return The preference value if it exists, or -1. Throws ClassCastException if there is a preference with this
-     *         name that is not a int
+     * name that is not a int
      * @see #getInt(Context, String, int)
      */
     public static int getInt(Context context, String key) {
@@ -69,12 +69,12 @@ public class SkinPreferencesUtils {
 
     /**
      * get int preferences
-     * 
+     *
      * @param context
-     * @param key The name of the preference to retrieve
+     * @param key          The name of the preference to retrieve
      * @param defaultValue Value to return if this preference does not exist
      * @return The preference value if it exists, or defValue. Throws ClassCastException if there is a preference with
-     *         this name that is not a int
+     * this name that is not a int
      */
     public static int getInt(Context context, String key, int defaultValue) {
         SharedPreferences settings = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
@@ -83,10 +83,10 @@ public class SkinPreferencesUtils {
 
     /**
      * put long preferences
-     * 
+     *
      * @param context
-     * @param key The name of the preference to modify
-     * @param value The new value for the preference
+     * @param key     The name of the preference to modify
+     * @param value   The new value for the preference
      * @return True if the new values were successfully written to persistent storage.
      */
     public static boolean putLong(Context context, String key, long value) {
@@ -98,11 +98,11 @@ public class SkinPreferencesUtils {
 
     /**
      * get long preferences
-     * 
+     *
      * @param context
-     * @param key The name of the preference to retrieve
+     * @param key     The name of the preference to retrieve
      * @return The preference value if it exists, or -1. Throws ClassCastException if there is a preference with this
-     *         name that is not a long
+     * name that is not a long
      * @see #getLong(Context, String, long)
      */
     public static long getLong(Context context, String key) {
@@ -111,12 +111,12 @@ public class SkinPreferencesUtils {
 
     /**
      * get long preferences
-     * 
+     *
      * @param context
-     * @param key The name of the preference to retrieve
+     * @param key          The name of the preference to retrieve
      * @param defaultValue Value to return if this preference does not exist
      * @return The preference value if it exists, or defValue. Throws ClassCastException if there is a preference with
-     *         this name that is not a long
+     * this name that is not a long
      */
     public static long getLong(Context context, String key, long defaultValue) {
         SharedPreferences settings = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
@@ -125,10 +125,10 @@ public class SkinPreferencesUtils {
 
     /**
      * put float preferences
-     * 
+     *
      * @param context
-     * @param key The name of the preference to modify
-     * @param value The new value for the preference
+     * @param key     The name of the preference to modify
+     * @param value   The new value for the preference
      * @return True if the new values were successfully written to persistent storage.
      */
     public static boolean putFloat(Context context, String key, float value) {
@@ -140,11 +140,11 @@ public class SkinPreferencesUtils {
 
     /**
      * get float preferences
-     * 
+     *
      * @param context
-     * @param key The name of the preference to retrieve
+     * @param key     The name of the preference to retrieve
      * @return The preference value if it exists, or -1. Throws ClassCastException if there is a preference with this
-     *         name that is not a float
+     * name that is not a float
      * @see #getFloat(Context, String, float)
      */
     public static float getFloat(Context context, String key) {
@@ -153,12 +153,12 @@ public class SkinPreferencesUtils {
 
     /**
      * get float preferences
-     * 
+     *
      * @param context
-     * @param key The name of the preference to retrieve
+     * @param key          The name of the preference to retrieve
      * @param defaultValue Value to return if this preference does not exist
      * @return The preference value if it exists, or defValue. Throws ClassCastException if there is a preference with
-     *         this name that is not a float
+     * this name that is not a float
      */
     public static float getFloat(Context context, String key, float defaultValue) {
         SharedPreferences settings = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
@@ -167,10 +167,10 @@ public class SkinPreferencesUtils {
 
     /**
      * put boolean preferences
-     * 
+     *
      * @param context
-     * @param key The name of the preference to modify
-     * @param value The new value for the preference
+     * @param key     The name of the preference to modify
+     * @param value   The new value for the preference
      * @return True if the new values were successfully written to persistent storage.
      */
     public static boolean putBoolean(Context context, String key, boolean value) {
@@ -182,11 +182,11 @@ public class SkinPreferencesUtils {
 
     /**
      * get boolean preferences, default is false
-     * 
+     *
      * @param context
-     * @param key The name of the preference to retrieve
+     * @param key     The name of the preference to retrieve
      * @return The preference value if it exists, or false. Throws ClassCastException if there is a preference with this
-     *         name that is not a boolean
+     * name that is not a boolean
      * @see #getBoolean(Context, String, boolean)
      */
     public static boolean getBoolean(Context context, String key) {
@@ -195,12 +195,12 @@ public class SkinPreferencesUtils {
 
     /**
      * get boolean preferences
-     * 
+     *
      * @param context
-     * @param key The name of the preference to retrieve
+     * @param key          The name of the preference to retrieve
      * @param defaultValue Value to return if this preference does not exist
      * @return The preference value if it exists, or defValue. Throws ClassCastException if there is a preference with
-     *         this name that is not a boolean
+     * this name that is not a boolean
      */
     public static boolean getBoolean(Context context, String key, boolean defaultValue) {
         SharedPreferences settings = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
@@ -214,7 +214,7 @@ public class SkinPreferencesUtils {
      */
     public static void clearPreferences(Context context) {
         SharedPreferences settings = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        settings.edit().clear().commit();
+        settings.edit().clear().apply();
     }
 
     /**
@@ -224,6 +224,6 @@ public class SkinPreferencesUtils {
      */
     public static void clearPreferencesByKey(Context context, String key) {
         SharedPreferences settings = context.getSharedPreferences(PREFERENCE_NAME, Context.MODE_PRIVATE);
-        settings.edit().remove(key).commit();
+        settings.edit().remove(key).apply();
     }
 }

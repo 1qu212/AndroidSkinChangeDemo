@@ -1,6 +1,7 @@
 package cn.msz.skinchangedemo.util;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
@@ -55,6 +56,24 @@ public class ResourceManager {
             trueColor = mResources.getColor(trueValueId);
         }
         return trueColor;
+    }
+
+    public ColorStateList getColorStateList(int attrValueId) {
+        ColorStateList originColorStateList = context.getResources().getColorStateList(attrValueId);
+        if (mResources == null || isDefaultSkin) {
+            return originColorStateList;
+        }
+
+        String resName = context.getResources().getResourceEntryName(attrValueId);
+
+        int trueValueId = mResources.getIdentifier(resName, "color", skinPackageName);
+        ColorStateList trueColorStateList;
+        if (trueValueId == 0) {
+            trueColorStateList = originColorStateList;
+        } else {
+            trueColorStateList = mResources.getColorStateList(trueValueId);
+        }
+        return trueColorStateList;
     }
 
     public float getDimen(int attrValueId) {

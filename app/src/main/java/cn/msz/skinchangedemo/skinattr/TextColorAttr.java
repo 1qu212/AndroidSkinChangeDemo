@@ -10,7 +10,7 @@ public class TextColorAttr extends SkinAttr {
     @Override
     public void setViewAttr(View view) {
         if (view instanceof TextView && isColor()) {
-            ((TextView) view).setTextColor(ResourceManager.getInstance().getColor(attrValueId));
+            ((TextView) view).setTextColor(ResourceManager.getInstance().getColorStateList(attrValueId));
         }
     }
 }

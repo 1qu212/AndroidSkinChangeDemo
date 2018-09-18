@@ -12,7 +12,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        SkinManager.getInstance().init(this);
+        SkinManager.getInstance().init(this, true);
         AttrFactory.addSupportAttr("textColor", new TextColorAttr());
         AttrFactory.addSupportAttr("textSize", new TextSizeAttr());
         AttrFactory.addSupportAttr("background", new BackgroundAttr());

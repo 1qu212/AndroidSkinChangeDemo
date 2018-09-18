@@ -10,9 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import cn.msz.skinchangedemo.base.BaseActivity;
+import cn.msz.skinchangedemo.skinattr.BackgroundAttr;
+import cn.msz.skinchangedemo.skinattr.TextColorAttr;
 import cn.msz.skinchangedemo.skinattr.TextSizeAttr;
 import cn.msz.skinchangedemo.util.DynamicSkinAttrItem;
+import cn.msz.skinchangedemo.util.DynamicSkinAttrListItem;
 import cn.msz.skinchangedemo.util.LoadSkinCallback;
 import cn.msz.skinchangedemo.util.SkinManager;
 
@@ -24,6 +30,13 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         TextView tvChangeSkin = findViewById(R.id.tv_change_skin);
         TextView tvResetSkin = findViewById(R.id.tv_reset_skin);
+        TextView tvDynamic = findViewById(R.id.tv_dynamic);
+        List<DynamicSkinAttrListItem.SkinAttrItem> skinAttrItemList = new ArrayList<>();
+        skinAttrItemList.add(new DynamicSkinAttrListItem.SkinAttrItem(this, new BackgroundAttr(), R.color.colorBackground));
+        skinAttrItemList.add(new DynamicSkinAttrListItem.SkinAttrItem(this, new TextColorAttr(), R.color.selector_color));
+        skinAttrItemList.add(new DynamicSkinAttrListItem.SkinAttrItem(this, new TextSizeAttr(), R.dimen.textSize14));
+        DynamicSkinAttrListItem dynamicSkinAttrListItem = new DynamicSkinAttrListItem(tvDynamic, skinAttrItemList);
+        mSkinInflaterFactory.addItem(dynamicSkinAttrListItem);
         RecyclerView recyclerView = findViewById(R.id.rv_change_skin);
         recyclerView.setAdapter(new RecyclerView.Adapter() {
             @NonNull
@@ -37,7 +50,7 @@ public class MainActivity extends BaseActivity {
             public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
                 Holder holder = (Holder) viewHolder;
                 DynamicSkinAttrItem dynamicSkinAttrItem = new DynamicSkinAttrItem(MainActivity.this, holder.tvItem, new TextSizeAttr(), R.dimen.textSize14);
-                skinInflaterFactory.addItem(dynamicSkinAttrItem);
+                mSkinInflaterFactory.addItem(dynamicSkinAttrItem);
             }
 
             @Override

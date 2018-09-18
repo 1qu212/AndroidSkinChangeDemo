@@ -77,6 +77,12 @@ public class SkinInflaterFactory implements LayoutInflater.Factory2 {
         mSkinAttrViewItemList.add(skinAttrViewItem);
     }
 
+    public void addItem(DynamicSkinAttrListItem item) {
+        SkinAttrViewItem skinAttrViewItem = new SkinAttrViewItem(item.view, item.skinAttrList);
+        skinAttrViewItem.setViewAttrs();
+        mSkinAttrViewItemList.add(skinAttrViewItem);
+    }
+
     private class SkinAttrViewItem {
         private View view;
         private List<SkinAttr> attrList;

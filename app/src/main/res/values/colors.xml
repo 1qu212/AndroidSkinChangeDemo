@@ -4,4 +4,10 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorBackground">#FFFFFF</color>
+
+    <color name="color_normal">#ffffff</color>
+    <color name="color_pressed">#11000000</color>
+
+    <color name="color_text_normal">#000000</color>
+    <color name="color_text_pressed">#0000ff</color>
 </resources>

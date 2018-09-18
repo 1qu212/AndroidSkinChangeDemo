@@ -9,17 +9,17 @@ import cn.msz.skinchangedemo.util.SkinInflaterFactory;
 import cn.msz.skinchangedemo.util.SkinManager;
 
 public class BaseActivity extends AppCompatActivity implements SkinChangeListener {
-    public SkinInflaterFactory skinInflaterFactory;
+    public SkinInflaterFactory mSkinInflaterFactory;
 
     @Override
     public void onSkinChanged() {
-        skinInflaterFactory.changeSkin();
+        mSkinInflaterFactory.changeSkin();
     }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        skinInflaterFactory = new SkinInflaterFactory(this);
-        getLayoutInflater().setFactory2(skinInflaterFactory);
+        mSkinInflaterFactory = new SkinInflaterFactory(this);
+        getLayoutInflater().setFactory2(mSkinInflaterFactory);
         super.onCreate(savedInstanceState);
         SkinManager.getInstance().registerSkinChangeListener(this);
     }

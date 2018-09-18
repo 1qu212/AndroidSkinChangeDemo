@@ -24,14 +24,14 @@ public class SkinManager {
     private List<SkinChangeListener> skinChangeListenerList = new ArrayList<>();
     private static final String SKINPATH = "skin_path";
 
-    public void init(Context context) {
+    public void init(Context context, boolean reloadSkin) {
         this.context = context;
         ResourceManager.getInstance().setContext(context);
         try {
             String[] skinFiles = context.getAssets().list(SkinConfig.SKIN_DIR_NAME);
             for (String fileName : skinFiles) {
                 File file = new File(SkinFileUtils.getSkinDir(context), fileName);
-                if (!file.exists()) {
+                if (!file.exists() || reloadSkin) {
                     SkinFileUtils.copySkinAssetsToDir(context, fileName, SkinFileUtils.getSkinDir(context));
                 }
             }
@@ -80,7 +80,7 @@ public class SkinManager {
                     String skinPkgPath = strings[0];
 
                     File file = new File(skinPkgPath);
-                    if (file == null || !file.exists()) {
+                    if (!file.exists()) {
                         return null;
                     }
 
@@ -135,7 +135,7 @@ public class SkinManager {
                     String skinPkgPath = SkinFileUtils.getSkinDir(context) + File.separator + strings[0];
 
                     File file = new File(skinPkgPath);
-                    if (file == null || !file.exists()) {
+                    if (!file.exists()) {
                         return null;
                     }
 
@@ -147,8 +147,7 @@ public class SkinManager {
                     addAssetPath.invoke(assetManager, skinPkgPath);
 
                     Resources superRes = context.getResources();
-                    Resources skinResource = new Resources(assetManager, superRes.getDisplayMetrics(), superRes.getConfiguration());
-                    return skinResource;
+                    return new Resources(assetManager, superRes.getDisplayMetrics(), superRes.getConfiguration());
                 } catch (Exception e) {
                     e.printStackTrace();
                     return null;
@@ -184,7 +183,7 @@ public class SkinManager {
         notifySkinChange();
     }
 
-    public void notifySkinChange() {
+    private void notifySkinChange() {
         if (skinChangeListenerList == null) return;
         for (SkinChangeListener skinChangeListener : skinChangeListenerList) {
             skinChangeListener.onSkinChanged();

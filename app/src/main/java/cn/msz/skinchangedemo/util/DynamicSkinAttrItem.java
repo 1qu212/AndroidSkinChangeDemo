@@ -9,7 +9,7 @@ public class DynamicSkinAttrItem {
 
     public DynamicSkinAttrItem(Context context, View view, SkinAttr skinAttr, int attrValueId) {
         this.view = view;
-        this.skinAttr = skinAttr;
+        this.skinAttr = skinAttr.clone();
         this.skinAttr.attrValueId = attrValueId;
         this.skinAttr.resourceTypeName = context.getResources().getResourceTypeName(attrValueId);
     }
