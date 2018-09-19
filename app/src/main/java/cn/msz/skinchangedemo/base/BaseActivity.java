@@ -1,14 +1,14 @@
 package cn.msz.skinchangedemo.base;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 
 import cn.msz.skinchange.util.SkinChangeListener;
 import cn.msz.skinchange.util.SkinInflaterFactory;
 import cn.msz.skinchange.util.SkinManager;
 
-public class BaseActivity extends AppCompatActivity implements SkinChangeListener {
+public class BaseActivity extends Activity implements SkinChangeListener {
     public SkinInflaterFactory mSkinInflaterFactory;
 
     @Override
@@ -19,7 +19,7 @@ public class BaseActivity extends AppCompatActivity implements SkinChangeListene
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         mSkinInflaterFactory = new SkinInflaterFactory(this);
-        getLayoutInflater().setFactory2(mSkinInflaterFactory);
+        getLayoutInflater().setFactory(mSkinInflaterFactory);
         super.onCreate(savedInstanceState);
         SkinManager.getInstance().registerSkinChangeListener(this);
     }

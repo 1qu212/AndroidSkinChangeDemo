@@ -15,7 +15,7 @@
 或者添加远程依赖
 ```xml
     dependencies {
-        compile 'cn.msz.skinchange:skinchange:0.0.1'
+        compile 'cn.msz.skinchange:skinchange:0.0.2'
     }
 ```
 
@@ -56,7 +56,7 @@
     }
 ```
 
-#### step3、编写你的BaseActivity(现在必须继承AppCompatActivity)，如：
+#### step3、编写你的BaseActivity，如：
 
 ```java
     public class BaseActivity extends AppCompatActivity implements SkinChangeListener {
@@ -139,3 +139,6 @@
 #### step8、 重置为加载系统的资源
 
 * 调用SkinManager的静态方法resetDefualtSkin即可。
+
+### 更新日志
+* 2018/09/20   现在去掉依赖的v7包，可以无侵入式更新皮肤了。

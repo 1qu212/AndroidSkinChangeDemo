@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
-import android.support.v4.content.ContextCompat;
 
 public class ResourceManager {
     private Context context;
@@ -95,7 +94,7 @@ public class ResourceManager {
     }
 
     public Drawable getDrawable(int attrValueId) {
-        Drawable originDrawable = ContextCompat.getDrawable(context, attrValueId);
+        Drawable originDrawable = context.getResources().getDrawable(attrValueId);
         if (mResources == null || isDefaultSkin) {
             return originDrawable;
         }
@@ -111,7 +110,7 @@ public class ResourceManager {
     }
 
     public Drawable getMipMap(int attrValueId) {
-        Drawable originDrawable = ContextCompat.getDrawable(context, attrValueId);
+        Drawable originDrawable = context.getResources().getDrawable(attrValueId);
         if (mResources == null || isDefaultSkin) {
             return originDrawable;
         }

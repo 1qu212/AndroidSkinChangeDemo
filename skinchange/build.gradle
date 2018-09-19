@@ -15,17 +15,11 @@ android {
     }
 }
 
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
-    implementation 'com.android.support:appcompat-v7:28.0.0-rc02'
-}
-
 ext {
 
     publishedGroupId = rootProject.publishedGroupId //引用时的第一部分
     artifact = 'skinchange'//引用时的第二部分
-    libraryVersion = '0.0.1'//引用时的第三部分
+    libraryVersion = '0.0.2'//引用时的第三部分
     libraryName = 'skinchange'//本module名称
     bintrayName = 'skinchange'//Jcenter 上显示的项目名
 

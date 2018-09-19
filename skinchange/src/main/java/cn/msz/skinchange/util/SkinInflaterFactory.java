@@ -1,8 +1,7 @@
 package cn.msz.skinchange.util;
 
+import android.app.Activity;
 import android.content.Context;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.app.AppCompatDelegate;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,24 +11,41 @@ import java.util.List;
 
 import cn.msz.skinchange.config.SkinConfig;
 
-public class SkinInflaterFactory implements LayoutInflater.Factory2 {
-    private AppCompatActivity mAppCompatActivity;
+public class SkinInflaterFactory implements LayoutInflater.Factory {
+    private Activity mActivity;
     private List<SkinAttrViewItem> mSkinAttrViewItemList = new ArrayList<>();
+    //见com.android.internal.policy.PhoneLayoutInflater
+    private static final String[] sClassPrefixList = {
+            "android.widget.",
+            "android.webkit.",
+            "android.app."
+    };
 
-    public SkinInflaterFactory(AppCompatActivity appCompatActivity) {
-        this.mAppCompatActivity = appCompatActivity;
+    public SkinInflaterFactory(Activity activity) {
+        this.mActivity = activity;
     }
 
     @Override
     public View onCreateView(String name, Context context, AttributeSet attrs) {
-        return null;
-    }
-
-    @Override
-    public View onCreateView(View parent, String name, Context context, AttributeSet attrs) {
         boolean isSkinEnable = attrs.getAttributeBooleanValue(SkinConfig.NAMESPACE, SkinConfig.ATTR_SKIN_ENABLE, false);
-        AppCompatDelegate delegate = mAppCompatActivity.getDelegate();
-        View view = delegate.createView(parent, name, context, attrs);
+        View view = null;
+        if (-1 == name.indexOf('.')) {
+            for (String prefix : sClassPrefixList) {
+                try {
+                    view = LayoutInflater.from(context).createView(name, prefix, attrs);
+                    if (view != null) {
+                        break;
+                    }
+                } catch (ClassNotFoundException e) {
+                }
+            }
+        } else {
+            try {
+                view = LayoutInflater.from(context).createView(name, null, attrs);
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
         if (view == null) {
             return null;
         }
