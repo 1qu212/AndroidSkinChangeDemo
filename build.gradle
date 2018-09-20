@@ -32,8 +32,8 @@ ext {
     bintrayRepo = 'maven' //仓库名
     publishedGroupId = 'cn.msz.skinchange' //引用时 第一部分
     libraryDescription = 'android skinchange'//描述
-    siteUrl = 'https://github.com/1qu212/SkinChangeDemo'//项目地址
-    gitUrl = 'https://github.com/1qu212/SkinChangeDemo.git'//gitUrl
+    siteUrl = 'https://github.com/1qu212/AndroidSkinChangeDemo'//项目地址
+    gitUrl = 'https://github.com/1qu212/AndroidSkinChangeDemo.git'//gitUrl
     developerId = '1qu212'//注册的用户名
     developerName = '马树忠'//开发者名称
     developerEmail = 'xydzjnq@gmail.com'//开发者邮箱

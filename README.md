@@ -15,7 +15,7 @@
 或者添加远程依赖
 ```xml
     dependencies {
-        compile 'cn.msz.skinchange:skinchange:0.0.2'
+        compile 'cn.msz.skinchange:skinchange:0.0.3'
     }
 ```
 
